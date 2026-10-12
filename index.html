@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080b0c">
+  <meta name="description" content="Костя 33: выжил вопреки всему — интерактивная история дружбы">
+  <title>КОСТЯ 33: ВЫЖИЛ ВОПРЕКИ ВСЕМУ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <header class="hud" aria-label="Игровая панель">
+    <button class="icon-btn" id="soundToggle" aria-pressed="false" aria-label="Включить звук">SFX: OFF</button>
+    <span class="hud-title">KOSTYA_OS / v33.0</span>
+    <span id="chapterReadout">00 / BOOT</span>
+  </header>
+
+  <main>
+    <section class="screen boot active" id="boot" data-chapter="00 / BOOT">
+      <div class="terminal panel">
+        <p class="eyebrow">СЕКРЕТНОЕ ДОСЬЕ // УРОВЕНЬ ДОПУСКА: БРАТАН</p>
+        <h1>КОСТЯ <span>33</span></h1>
+        <p class="mega">ВЫЖИЛ ВОПРЕКИ ВСЕМУ</p>
+        <div class="boot-log" id="bootLog" aria-live="polite"></div>
+        <div class="loader"><span id="bootBar"></span></div>
+        <button class="btn primary hidden" id="startBtn">Я КОСТЯ. МНЕ 33. И Я ГОТОВ</button>
+      </div>
+      <p class="scroll-hint hidden" id="startHint">нажми, чтобы начать прохождение</p>
+    </section>
+
+    <section class="screen chapter" id="kashtanka" data-chapter="01 / КАШТАНКА">
+      <div class="chapter-no">ГЛАВА 01</div>
+      <div class="split">
+        <div>
+          <p class="eyebrow">≈ 2007 ГОД / САНКТ-ПЕТЕРБУРГ</p>
+          <h2>КАШТАНКА</h2>
+          <p class="lead">Обычная лавочка. Общий знакомый совершает поступок, последствия которого никто тогда не способен оценить.</p>
+          <div class="character-card"><b>СТЁПА, ~14 ЛЕТ</b><span>класс: будущий братан</span></div>
+          <div class="character-card"><b>КОСТЯ, ~14 ЛЕТ</b><span>класс: красавчик (пассивный навык)</span></div>
+          <p>Два малолетних долбоёба знакомятся на лавочке. Пока что ничего особенного не происходит.</p>
+          <p class="impact">ЭТО НЕНАДОЛГО.</p>
+          <button class="btn next" data-next="entrance">ПОСМОТРЕТЬ ПОСЛЕДСТВИЯ</button>
+        </div>
+        <div class="pixel-scene" aria-label="Два дома и лавочка на Каштанке">
+          <div class="moon"></div><div class="house left"></div><div class="house right"></div>
+          <div class="bench"></div><div class="person one"></div><div class="person two"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen chapter" id="entrance" data-chapter="02 / ПАДИК">
+      <div class="chapter-no">ГЛАВА 02</div>
+      <div class="door-layout">
+        <div class="door" id="door" aria-hidden="true"><span>47</span><i></i></div>
+        <div class="panel access-panel">
+          <p class="danger">● ДОСТУП ОГРАНИЧЕН</p>
+          <h2>ПАДИК</h2>
+          <p>Кто имеет право находиться в данном помещении?</p>
+          <div class="choices" id="accessChoices">
+            <button class="choice" data-wrong="Недостаточный уровень доступа.">Жильцы дома</button>
+            <button class="choice" data-wrong="Вы вообще кто?">Сотрудники ЖКХ</button>
+            <button class="choice correct">Два долбоёба, которым больше некуда идти</button>
+          </div>
+          <p class="status-line" id="accessStatus" aria-live="polite">ОЖИДАНИЕ ОТВЕТА_</p>
+          <div class="unlocked hidden" id="unlocked">
+            <p class="success">✓ ЛИЧНОСТЬ ПОДТВЕРЖДЕНА. ДОБРО ПОЖАЛОВАТЬ ДОМОЙ.</p>
+            <p>≈ 17–20 лет. Иногда компьютерные клубы. Но падик общего кореша…</p>
+            <p class="impact">ПАДИК — ЭТО СВЯТОЕ.</p>
+            <ul class="case-list"><li>Где сегодня бухать?</li><li>Кто кому нравится?</li><li>Куда идти дальше?</li><li>Кто долбоёб?</li></ul>
+            <small>В отдельных случаях ответ на все четыре вопроса совпадал.</small>
+            <button class="btn next" data-next="civilization">ВЫЙТИ В ЦИВИЛИЗАЦИЮ</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen chapter" id="civilization" data-chapter="03 / ЭВОЛЮЦИЯ">
+      <div class="chapter-no">ГЛАВА 03</div>
+      <p class="eyebrow">ВНИМАНИЕ: ОБНАРУЖЕНА ЭВОЛЮЦИЯ</p>
+      <h2>ЦИВИЛИЗАЦИЯ</h2>
+      <div class="evolution"><span>КАШТАНКА</span><b>→</b><span>ПАДИК</span><b>→</b><span>КОМП. КЛУБЫ</span><b>→</b><span>БАРЫ</span></div>
+      <div class="gallery">
+        <figure class="photo wide"><img src="assets/friends-dima.jpg" alt="Костя, Стёпа и друг" loading="lazy"><figcaption><b>ОТАПЛИВАЕМОЕ ПОМЕЩЕНИЕ</b>Учёные впервые зафиксировали употребление алкоголя внутри.</figcaption></figure>
+        <figure class="photo"><img src="assets/sauna.jpg" alt="Костя и Стёпа в бане" loading="lazy"><figcaption><b>КУЛЬТУРНЫЙ ОТДЫХ</b>Слово «культурный» добавлено Костей и Стёпой.</figcaption></figure>
+        <figure class="photo"><img src="assets/duo-selfie.jpg" alt="Весёлое селфи Кости и Стёпы" loading="lazy"><figcaption><b>ДВА ВЗРОСЛЫХ ГРАЖДАНИНА</b>По крайней мере, юридически.</figcaption></figure>
+        <figure class="photo wide"><img src="assets/friends-vasya.jpg" alt="Костя, Стёпа и друг за столом" loading="lazy"><figcaption><b>ПРОКАЧКА ПЕРСОНАЖЕЙ</b>Редкий кооперативный режим: «ещё по одной и домой».</figcaption></figure>
+      </div>
+      <button class="btn next" data-next="rpg">ЗАПУСТИТЬ ПОБОЧНЫЙ КВЕСТ</button>
+    </section>
+
+    <section class="screen chapter rpg" id="rpg" data-chapter="04 / RPG">
+      <div class="chapter-no">ГЛАВА 04</div>
+      <p class="eyebrow">ПОБОЧНЫЙ КВЕСТ</p>
+      <h2>СТАНДАРТНЫЙ ВЕЧЕР С БРАТАНОМ</h2>
+      <div class="rpg-grid">
+        <div class="stat-panel panel"><div><span>НАСТРОЕНИЕ</span><meter id="mood" min="0" max="100" value="10"></meter></div><div><span>БРАТСТВО</span><meter id="brotherhood" min="0" max="100" value="30"></meter></div><div><span>ПАМЯТЬ</span><meter id="memory" min="0" max="100" value="100"></meter></div><div><span>ЗАВТРАШНЕЕ УТРО</span><meter id="morning" min="0" max="100" value="100"></meter></div></div>
+        <div class="quest-card panel" id="questCard">
+          <p id="drinkLevel">УРОВЕНЬ 1 / 3</p><div class="drink-icon" id="drinkIcon">🍺</div><h3 id="drinkName">ПИВО</h3><p id="drinkStats">+10 к настроению<br>+5 к разговорам о жизни</p>
+          <button class="btn primary" id="drinkBtn">ПРОДОЛЖИТЬ ВЕЧЕР</button>
+          <button class="btn danger-btn hidden" id="endEvening">ЗАКОНЧИТЬ ВЕЧЕР</button>
+          <button class="btn hidden" id="rpgContinue" data-next="weddings">ПРОДОЛЖИТЬ</button>
+          <p class="status-line" id="rpgStatus"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen chapter warm" id="weddings" data-chapter="05 / ВЗРОСЛЕНИЕ">
+      <div class="chapter-no">ГЛАВА 05</div>
+      <p class="eyebrow">НЕОЖИДАННЫЙ СЮЖЕТНЫЙ ПОВОРОТ</p>
+      <h2>МЫ НАЧАЛИ ВЗРОСЛЕТЬ</h2>
+      <p class="lead">А потом произошло то, чего никто не ожидал.</p>
+      <div class="gallery wedding-gallery">
+        <figure class="photo"><img src="assets/wedding-witness.jpg" alt="Костя — свидетель на свадьбе Стёпы" loading="lazy"><figcaption><b>ОДИН ИЗ ПОДОЗРЕВАЕМЫХ ЖЕНИЛСЯ</b>Братан присутствовал при совершении сделки.</figcaption></figure>
+        <figure class="photo"><img src="assets/wedding-handsome.jpg" alt="Костя и Стёпа на свадьбе" loading="lazy"><figcaption><b>КРАСАВЧИКИ НА СВАДЬБЕ</b>Официально подтверждено архивными материалами.</figcaption></figure>
+        <figure class="photo"><img src="assets/newlyweds.jpg" alt="Стёпа рядом с Костей и его женой" loading="lazy"><figcaption><b>КОНСТАНТИН ОБЕЗВРЕЖЕН</b>Теперь женаты оба.</figcaption></figure>
+      </div>
+      <button class="btn next" data-next="adults">ПРОВЕРИТЬ, ЧТО БЫЛО ДАЛЬШЕ</button>
+    </section>
+
+    <section class="screen chapter warm" id="adults" data-chapter="06 / РАССТОЯНИЕ">
+      <div class="chapter-no">ГЛАВА 06</div>
+      <h2>МЫ, БЛЯДЬ, ВЗРОСЛЫЕ</h2>
+      <div class="adult-grid">
+        <figure class="photo"><img src="assets/housewarming.jpg" alt="Новоселье в пустой квартире" loading="lazy"><figcaption><b>НОВОСЕЛЬЕ</b>Квартира пустая. История — уже нет.</figcaption></figure>
+        <div class="story-copy"><p>Когда-то всё было очень просто. Мы жили напротив друг друга. Чтобы встретиться, достаточно было выйти из дома.</p><p>Каштанка. Падик. Потом бары. И казалось, что времени дохуя.</p><p>А потом появились семьи. Работа. Дети.</p><div class="distance"><span>КОСТЯ<br><small>ЦЕНТР</small></span><i></i><span>СТЁПА<br><small>КОЛПИНО</small></span></div><p>Теперь, чтобы просто встретиться, должны совпасть примерно <b>семнадцать обстоятельств и расположение планет.</b></p></div>
+      </div>
+      <button class="btn next" data-next="godfather">ДАЛЬШЕ</button>
+    </section>
+
+    <section class="screen chapter emotional" id="godfather" data-chapter="07 / КРЁСТНЫЙ">
+      <div class="chapter-no">ГЛАВА 07</div>
+      <div class="hero-photo"><img src="assets/godfather.jpg" alt="Костя с крестницей" loading="lazy"><div class="hero-copy"><p>Когда-то ты был просто пацаном из дома напротив.</p><p>Потом корешем.</p><p>Потом одним из моих лучших друзей.</p><p>А спустя столько лет…</p><h2>ТЫ СТАЛ КРЁСТНЫМ МОЕЙ ДОЧЕРИ.</h2><p>Наверное, лучше объяснить, что для меня значит слово <b>«братан»</b>, уже и не получится.</p><button class="btn next" data-next="diagnostics">ЕСТЬ ЕЩЁ КОЕ-ЧТО</button></div></div>
+    </section>
+
+    <section class="screen chapter" id="diagnostics" data-chapter="08 / ДИАГНОСТИКА">
+      <div class="chapter-no">ГЛАВА 08</div>
+      <p class="eyebrow">ФИНАЛЬНАЯ ДИАГНОСТИКА</p>
+      <h2>КОНСТАНТИН v33.0</h2>
+      <div class="diagnostic-grid panel" id="diagGrid">
+        <div><span>ХОРОШИЙ ДРУГ</span><b>100%</b></div><div><span>ДОБРЫЙ</span><b>100%</b></div><div><span>ЧЕСТНЫЙ</span><b>100%</b></div><div><span>ЛЮБИТ СЫНА</span><b>∞</b></div><div><span>ИГРЫ / КИНО / РОК</span><b>ONLINE</b></div><div><span>КРАСАВЧИК</span><b class="warn">148%</b></div>
+      </div>
+      <p class="status-line">⚠ ЗНАЧЕНИЕ «КРАСАВЧИК» ВЫХОДИТ ЗА ПРЕДЕЛЫ ДОПУСТИМОГО ДИАПАЗОНА.</p>
+      <div class="bug panel">
+        <p>ПОМОЖЕТ ДРУГУ <b>✓</b></p><p>ПОПРОСИТ ПОМОЩИ САМ <b id="bugLoad">ЗАГРУЗКА...</b></p><p>ОТВЕТИТ СТЁПЕ СРАЗУ <b>✕</b></p>
+        <button class="btn primary" id="scanBug">ЗАВЕРШИТЬ ПРОВЕРКУ</button>
+        <div class="hidden" id="bugResult"><h3>КРИТИЧЕСКИЙ БАГ ОБНАРУЖЕН</h3><p>Когда помощь нужна братану: <code>Костя → поможет</code></p><p>Когда помощь нужна Косте: <code>Костя → хрен кому позвонит</code></p><small>Некоторые ошибки разработчикам исправить не удалось.</small><button class="btn next" data-next="finale">ОТКРЫТЬ ПОСЛЕДНЕЕ СООБЩЕНИЕ</button></div>
+      </div>
+    </section>
+
+    <section class="screen chapter finale" id="finale" data-chapter="09 / БРАТАН">
+      <div class="final-wrap">
+        <p class="eyebrow">ЛИЧНОЕ СООБЩЕНИЕ // БЕЗ ПРИКОЛОВ</p>
+        <h2>БРАТАН.</h2>
+        <div class="letter">
+          <p>Тебе 33. Мы знакомы уже больше половины нашей жизни.</p>
+          <p>За это время изменилось практически всё. Мы выросли. Женились. Стали отцами. У каждого появилась своя жизнь, свои заботы и свои проблемы.</p>
+          <p>Мы уже не можем просто выйти из дома и через пару минут встретиться на Каштанке. И видимся мы сейчас намного реже, чем хотелось бы.</p>
+          <p>Но есть вещи, которые за всё это время не поменялись.</p>
+          <p>Я знаю, что если мне действительно будет нужна помощь — ты будешь рядом. И хочу, чтобы ты знал то же самое.</p>
+          <p>Только, сука, <b>иногда для этого тебе придётся мне позвонить.</b></p>
+          <p>Не надо всегда всё вывозить самому. Для этого у тебя тоже есть братан.</p>
+          <hr>
+          <p>Я очень рад, что почти двадцать лет назад какой-то общий кореш познакомил нас на лавочке в Каштанке. Он тогда явно не понимал, какую хуйню натворил.</p>
+          <p>А я сейчас понимаю. И ни на что бы её не поменял.</p>
+          <p class="birthday">С ДНЁМ РОЖДЕНИЯ, БРАТАН. <span>♥</span></p>
+          <p>Спасибо за эти годы.<br><b>Продолжаем.</b></p>
+        </div>
+        <button class="btn primary huge" id="continueGame">ПРОДОЛЖИТЬ ИГРУ</button>
+      </div>
+      <div class="ending hidden" id="ending">
+        <p class="eyebrow">НОВАЯ ГЛАВА РАЗБЛОКИРОВАНА</p><h2>КОСТЯ 33 → 34</h2><p>ДО ЗАВЕРШЕНИЯ ДРУЖБЫ</p><strong>∞</strong>
+        <figure class="photo final-photo"><img src="assets/kostya-daughter.jpg" alt="Костя с дочкой Стёпы" loading="lazy"><figcaption><b>P.S. КРАСАВЧИК, КОНЕЧНО.</b>Система снова подтверждает.</figcaption></figure>
+        <button class="btn" id="replay">ПРОЙТИ ЕЩЁ РАЗ</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
